@@ -1,0 +1,6 @@
+.header {
+  @apply px-[2em] py-[1.5em] border-solid border-b border-[#414141] bg-[#060404];
+  h2 {
+    @apply font-bold text-xl;
+  }
+}
