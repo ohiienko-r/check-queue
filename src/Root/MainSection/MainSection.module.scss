@@ -1,3 +1,7 @@
 .mainSection {
   @apply flex h-[100%];
 }
+
+.mainContainer {
+  @apply w-full flex items-center justify-center;
+}

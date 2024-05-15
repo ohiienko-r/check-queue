@@ -1,0 +1,27 @@
+.container {
+  @apply px-[2em] py-[3em] flex flex-col items-center justify-center bg-[#060404] max-w-[600px] w-full rounded-lg gap-8;
+  h3 {
+    @apply font-semibold text-lg;
+  }
+  form {
+    @apply flex flex-col gap-4 w-3/5;
+    div {
+      @apply flex flex-col gap-2;
+      span {
+        @apply text-[#ac403e];
+      }
+      input {
+        @apply bg-[#0F0707] border border-solid rounded-lg p-[0.5em];
+      }
+    }
+    button {
+      @apply bg-[#ac403e] px-8 py-2 m-auto rounded-lg font-medium  transition-all;
+      &:hover {
+        @apply -translate-y-0.5 shadow-custom;
+      }
+      &:disabled {
+        @apply translate-y-0 bg-[#808080] shadow-none;
+      }
+    }
+  }
+}

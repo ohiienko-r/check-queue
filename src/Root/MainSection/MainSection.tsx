@@ -7,7 +7,7 @@ const MainSection: FC<PropsWithChildren> = () => {
   return (
     <section className={classes.mainSection}>
       <Sidebar />
-      <main>
+      <main className={classes.mainContainer}>
         <Outlet />
       </main>
     </section>
