@@ -14,5 +14,14 @@
         @apply bg-[#0F0707] border border-solid rounded-lg p-[0.5em];
       }
     }
+    button {
+      @apply bg-[#ac403e] px-8 py-2 m-auto rounded-lg font-medium  transition-all;
+      &:hover {
+        @apply -translate-y-0.5 shadow-custom;
+      }
+      &:disabled {
+        @apply translate-y-0 bg-[#808080] shadow-none;
+      }
+    }
   }
 }
