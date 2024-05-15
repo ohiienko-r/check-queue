@@ -1,0 +1,21 @@
+.button {
+  @apply py-[0.6em] px-[2em] border-solid rounded-lg
+    font-medium  transition-all;
+  &:hover {
+    @apply -translate-y-0.5 shadow-custom;
+  }
+  &:disabled {
+    @apply translate-y-0 bg-[#808080] shadow-none;
+  }
+}
+
+.submit {
+  @apply bg-[rgb(172,64,62)];
+}
+
+.dismiss {
+  @apply bg-[#280909];
+  &:hover {
+    @apply shadow-none;
+  }
+}
