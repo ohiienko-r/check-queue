@@ -6,6 +6,7 @@ import classes from "./Auth.module.scss";
 
 const Auth: FC = () => {
   const [modalVisible, setModalVisible] = useState<boolean>(false);
+
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
