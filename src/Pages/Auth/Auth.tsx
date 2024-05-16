@@ -46,18 +46,13 @@ const Auth: FC = () => {
           onClose={() => setModalVisible(!modalVisible)}
         />
       )}
-      <h3>Sign In</h3>
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="email">
-            Email<span>*</span>:
-          </label>
+          <label htmlFor="email">Email:</label>
           <input id="email" type="email" name="email" required />
         </div>
         <div>
-          <label htmlFor="password">
-            Password<span>*</span>:
-          </label>
+          <label htmlFor="password">Password:</label>
           <input id="password" type="password" name="password" required />
         </div>
         <button type="submit">Sign In</button>
