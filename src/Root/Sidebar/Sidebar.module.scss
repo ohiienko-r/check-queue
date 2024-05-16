@@ -7,20 +7,5 @@
 }
 
 .userInfoContainer {
-  @apply mt-auto px-8;
-}
-.userInfo {
-  @apply flex gap-2 py-8  border-t border-solid;
-}
-
-.userName {
-  @apply font-bold;
-}
-
-.userEmail {
-  @apply font-thin text-sm;
-}
-
-.userIcon {
-  @apply w-[3em];
+  @apply mt-auto p-8 border-t border-solid;
 }

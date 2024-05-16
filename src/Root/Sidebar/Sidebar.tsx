@@ -1,6 +1,7 @@
 import { FC } from "react";
+import { User } from "@/components";
 import { useAuth } from "@/Contexts";
-import userCircle from "@/assets/images/user-circle.svg";
+
 import classes from "./Sidebar.module.scss";
 
 const Sidebar: FC = () => {
@@ -10,19 +11,10 @@ const Sidebar: FC = () => {
       <h2 className={classes.logo}>Check Queue</h2>
       {user && (
         <div className={classes.userInfoContainer}>
-          <div className={classes.userInfo}>
-            <img
-              src={userCircle}
-              alt="User circle icon"
-              className={classes.userIcon}
-            />
-            <div>
-              <p className={classes.userName}>
-                {user.displayName ?? "Gogi Serviceman"}
-              </p>
-              <p className={classes.userEmail}>{user.email}</p>
-            </div>
-          </div>
+          <User
+            displayName={user.displayName as string}
+            email={user.email as string}
+          />
         </div>
       )}
     </aside>

@@ -1,0 +1,15 @@
+.userInfo {
+  @apply flex gap-2;
+}
+
+.userName {
+  @apply font-semibold;
+}
+
+.userEmail {
+  @apply font-thin text-sm;
+}
+
+.userIcon {
+  @apply w-12 rounded-full;
+}
