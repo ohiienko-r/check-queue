@@ -18,10 +18,8 @@ const Modal: FC<ModalPropTypes> = ({
           " "
         )}
       >
-        <div className={classes.textContainer}>
-          <h2>{title}</h2>
-          <p>{text}</p>
-        </div>
+        <h2>{title}</h2>
+        <p>{text}</p>
 
         <div className={classes.buttonsContainer}>
           <Button style="dismiss" innerText="Close" onPress={onClose} />
