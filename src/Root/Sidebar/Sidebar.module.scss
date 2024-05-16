@@ -1,11 +1,15 @@
 .sidebar {
-  @apply bg-[#060404] flex flex-col min-w-[350px];
+  @apply bg-[#060404] flex flex-col  min-w-[350px];
 }
 
 .logo {
   @apply font-bold text-xl p-8 border-b border-solid border-[#414141];
 }
 
+.subMenu {
+  @apply flex flex-col gap-4 p-8 mt-auto;
+}
+
 .userInfoContainer {
-  @apply mt-auto p-8 border-t border-solid;
+  @apply p-8 border-t border-solid;
 }

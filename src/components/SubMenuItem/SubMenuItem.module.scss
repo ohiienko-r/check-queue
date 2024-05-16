@@ -1,0 +1,12 @@
+.subItem {
+  @apply flex gap-2 transition-all w-fit;
+
+  &:hover {
+    @apply cursor-pointer -translate-y-0.5 shadow-custom rounded-full;
+    background-color: rgba(172, 64, 62, 0.15);
+  }
+}
+
+.subItemIcon {
+  @apply w-6;
+}
