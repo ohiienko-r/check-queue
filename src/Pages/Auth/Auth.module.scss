@@ -7,9 +7,6 @@
     @apply flex flex-col gap-4 w-3/5;
     div {
       @apply flex flex-col gap-2;
-      span {
-        @apply text-[#ac403e];
-      }
       input {
         @apply bg-[#0F0707] border border-solid rounded-lg p-[0.5em];
       }
