@@ -1,14 +1,16 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { useAuth } from "@/Contexts";
 import { ROUTES_NAMES } from "./routes-names";
 import { Root } from "@/Root";
-import { Auth } from "@/Pages";
+import { getRotues } from "./routes";
 
 const Router = () => {
+  const user = useAuth();
   const router = createBrowserRouter([
     {
       path: ROUTES_NAMES.ROOT,
       element: <Root />,
-      children: [{ index: true, element: <Auth /> }],
+      children: getRotues(user),
     },
   ]);
   return <RouterProvider router={router} />;

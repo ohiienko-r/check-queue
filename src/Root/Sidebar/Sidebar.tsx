@@ -1,6 +1,7 @@
 import { FC } from "react";
-import { User, SubMenuItem } from "@/components";
+import { User, SubMenuItem, NavLink } from "@/components";
 import { useAuth } from "@/Contexts";
+import { navigationMenu } from "./helpers";
 import settingsIcon from "@/assets/images/settings.svg";
 import helpIcon from "@/assets/images/help.svg";
 
@@ -13,6 +14,15 @@ const Sidebar: FC = () => {
       <h2 className={classes.logo}>Check Queue</h2>
       {user && (
         <>
+          <ul className={classes.navList}>
+            {navigationMenu.map((menuItem) => (
+              <NavLink
+                title={menuItem.title}
+                routName={menuItem.route}
+                key={menuItem.id}
+              />
+            ))}
+          </ul>
           <ul className={classes.subMenu}>
             <SubMenuItem
               iconURL={settingsIcon}
