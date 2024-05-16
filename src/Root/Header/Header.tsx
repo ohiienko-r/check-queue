@@ -6,12 +6,15 @@ import { useAuth } from "@/Contexts";
 import classes from "./Header.module.scss";
 
 const Header: FC = () => {
-  const user = useAuth();
+  const auth = useAuth();
   const [parent] = useAutoAnimate();
+
   return (
     <header className={classes.header} ref={parent}>
       <h2>Check Queue</h2>
-      {user && <Button style="dismiss" innerText="Sign out" onPress={logOut} />}
+      {auth?.user && (
+        <Button style="dismiss" innerText="Sign out" onPress={logOut} />
+      )}
     </header>
   );
 };
