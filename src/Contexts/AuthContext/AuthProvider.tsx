@@ -8,7 +8,7 @@ const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => setUser(user));
-    return () => unsubscribe();
+    return unsubscribe;
   }, []);
 
   return <AuthContext.Provider value={user}>{children}</AuthContext.Provider>;

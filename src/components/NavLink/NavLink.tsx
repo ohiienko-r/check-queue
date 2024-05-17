@@ -1,27 +1,19 @@
 import { FC } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { NavLinkPropTypes } from "./types";
 import classes from "./NavLink.module.scss";
 
-const NavLink: FC<NavLinkPropTypes> = ({
-  id,
-  title,
-  routName,
-  isActive,
-  onPress,
-}) => {
-  const handlePress = () => {
-    onPress(id);
-  };
+const NavigationLink: FC<NavLinkPropTypes> = ({ title, routName }) => {
   return (
-    <Link
+    <NavLink
       to={routName}
-      className={[classes.navLink, isActive && classes.active].join(" ")}
-      onClick={handlePress}
+      className={({ isActive }) =>
+        isActive ? [classes.navLink, classes.active].join(" ") : classes.navLink
+      }
     >
       {title}
-    </Link>
+    </NavLink>
   );
 };
 
-export default NavLink;
+export default NavigationLink;
