@@ -1,8 +1,7 @@
 import { FC } from "react";
-import { User, SubMenuItem, NavigationMenu } from "@/components";
 import { useAuth } from "@/Contexts";
+import { NavigationMenu, SubMenu, User } from "@/components";
 import { navigationMenu, subMenu } from "./helpers";
-
 import classes from "./Sidebar.module.scss";
 
 const Sidebar: FC = () => {
@@ -13,16 +12,7 @@ const Sidebar: FC = () => {
       {user && (
         <>
           <NavigationMenu config={navigationMenu} />
-          <ul className={classes.subMenu}>
-            {subMenu.map((item) => (
-              <SubMenuItem
-                key={item.id}
-                iconURL={item.iconUrl}
-                title={item.title}
-                onPress={item.onPress}
-              />
-            ))}
-          </ul>
+          <SubMenu config={subMenu} />
           <div className={classes.userInfoContainer}>
             <User
               displayName={user.displayName as string}
