@@ -2,8 +2,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { useAuth } from "@/Contexts";
 import { ROUTES_NAMES } from "./routes-names";
 import { Root } from "@/Root";
-import { getRoutes } from "./routes";
 import Loading from "@/Root/Loading/Loading";
+import { getRoutes } from "./routes";
 
 const Router = () => {
   const { user, loading } = useAuth();
