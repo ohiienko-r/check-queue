@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { User, SubMenuItem, NavigationLink } from "@/components";
+import { User, SubMenuItem, NavigationMenu } from "@/components";
 import { useAuth } from "@/Contexts";
 import { navigationMenu, subMenu } from "./helpers";
 
@@ -12,15 +12,7 @@ const Sidebar: FC = () => {
       <h2 className={classes.logo}>Check Queue</h2>
       {user && (
         <>
-          <ul className={classes.navList}>
-            {navigationMenu.map((item) => (
-              <NavigationLink
-                key={item.id}
-                title={item.title}
-                routName={item.route}
-              />
-            ))}
-          </ul>
+          <NavigationMenu config={navigationMenu} />
           <ul className={classes.subMenu}>
             {subMenu.map((item) => (
               <SubMenuItem
