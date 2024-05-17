@@ -6,6 +6,7 @@ import { getRotues } from "./routes";
 
 const Router = () => {
   const user = useAuth();
+
   const router = createBrowserRouter([
     {
       path: ROUTES_NAMES.ROOT,

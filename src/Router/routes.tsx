@@ -7,7 +7,7 @@ export const getRotues = (user: User | null) => {
     return [{ index: true, element: <Auth /> }];
   } else
     return [
-      { index: true, element: <RfqPage /> },
+      { path: ROUTES_NAMES.RFQ, element: <RfqPage /> },
       { path: ROUTES_NAMES.PCB, element: <PcbPage /> },
     ];
 };
