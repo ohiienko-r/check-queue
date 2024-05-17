@@ -8,7 +8,7 @@ import helpIcon from "@/assets/images/help.svg";
 import classes from "./Sidebar.module.scss";
 
 const Sidebar: FC = () => {
-  const user = useAuth();
+  const { user } = useAuth();
   return (
     <aside className={classes.sidebar}>
       <h2 className={classes.logo}>Check Queue</h2>
