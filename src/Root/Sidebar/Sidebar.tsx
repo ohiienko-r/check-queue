@@ -15,9 +15,9 @@ const Sidebar: FC = () => {
           <ul className={classes.navList}>
             {navigationMenu.map((item) => (
               <NavigationLink
+                key={item.id}
                 title={item.title}
                 routName={item.route}
-                key={item.id}
               />
             ))}
           </ul>
