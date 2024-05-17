@@ -1,0 +1,10 @@
+.navLink {
+  @apply w-full px-4 py-3 rounded-lg  transition-all font-medium;
+  &:hover {
+    @apply translate-x-2 bg-[#AC403E];
+  }
+}
+
+.active {
+  @apply bg-[#AC403E];
+}
