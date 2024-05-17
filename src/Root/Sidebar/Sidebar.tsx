@@ -1,9 +1,7 @@
 import { FC } from "react";
 import { User, SubMenuItem, NavigationLink } from "@/components";
 import { useAuth } from "@/Contexts";
-import { navigationMenu } from "./helpers";
-import settingsIcon from "@/assets/images/settings.svg";
-import helpIcon from "@/assets/images/help.svg";
+import { navigationMenu, subMenu } from "./helpers";
 
 import classes from "./Sidebar.module.scss";
 
@@ -15,25 +13,23 @@ const Sidebar: FC = () => {
       {user && (
         <>
           <ul className={classes.navList}>
-            {navigationMenu.map((menuItem) => (
+            {navigationMenu.map((item) => (
               <NavigationLink
-                title={menuItem.title}
-                routName={menuItem.route}
-                key={menuItem.id}
+                title={item.title}
+                routName={item.route}
+                key={item.id}
               />
             ))}
           </ul>
           <ul className={classes.subMenu}>
-            <SubMenuItem
-              iconURL={settingsIcon}
-              title="Settings"
-              onPress={() => console.log("settings")}
-            />
-            <SubMenuItem
-              iconURL={helpIcon}
-              title="Help"
-              onPress={() => console.log("help")}
-            />
+            {subMenu.map((item) => (
+              <SubMenuItem
+                key={item.id}
+                iconURL={item.iconUrl}
+                title={item.title}
+                onPress={item.onPress}
+              />
+            ))}
           </ul>
           <div className={classes.userInfoContainer}>
             <User
