@@ -5,10 +5,7 @@ import { Navigate } from "react-router-dom";
 
 export const getRoutes = (user: User | null) => {
   if (!user) {
-    return [
-      { index: true, element: <Navigate to={ROUTES_NAMES.AUTH} replace /> },
-      { path: ROUTES_NAMES.AUTH, element: <Auth /> },
-    ];
+    return [{ index: true, element: <Auth /> }];
   } else {
     return [
       { index: true, element: <Navigate to={ROUTES_NAMES.RFQ} replace /> },
