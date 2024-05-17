@@ -8,7 +8,6 @@ import { getRoutes } from "./routes";
 const Router = () => {
   const { user, loading } = useAuth();
 
-  //TODO: dix this quick and dirty solution
   if (loading) {
     return <Loading />;
   }
@@ -21,7 +20,6 @@ const Router = () => {
     },
   ]);
 
-  console.log(getRoutes(user));
   return <RouterProvider router={router} />;
 };
 
