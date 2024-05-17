@@ -1,48 +1,35 @@
-import { FC, useState } from "react";
-import { User, SubMenuItem, NavLink } from "@/components";
+import { FC } from "react";
+import { User, SubMenuItem, NavigationLink } from "@/components";
 import { useAuth } from "@/Contexts";
-import { navigationMenu } from "./helpers";
-import settingsIcon from "@/assets/images/settings.svg";
-import helpIcon from "@/assets/images/help.svg";
+import { navigationMenu, subMenu } from "./helpers";
 
 import classes from "./Sidebar.module.scss";
 
 const Sidebar: FC = () => {
-  const [activeLink, setActiveLink] = useState<number>(0);
-
-  const handleLinkClick = (id: number) => {
-    setActiveLink(id);
-  };
-
-  const user = useAuth();
+  const { user } = useAuth();
   return (
     <aside className={classes.sidebar}>
       <h2 className={classes.logo}>Check Queue</h2>
       {user && (
         <>
           <ul className={classes.navList}>
-            {navigationMenu.map((menuItem) => (
-              <NavLink
-                id={menuItem.id}
-                title={menuItem.title}
-                routName={menuItem.route}
-                key={menuItem.id}
-                isActive={menuItem.id === activeLink}
-                onPress={handleLinkClick}
+            {navigationMenu.map((item) => (
+              <NavigationLink
+                key={item.id}
+                title={item.title}
+                routName={item.route}
               />
             ))}
           </ul>
           <ul className={classes.subMenu}>
-            <SubMenuItem
-              iconURL={settingsIcon}
-              title="Settings"
-              onPress={() => console.log("settings")}
-            />
-            <SubMenuItem
-              iconURL={helpIcon}
-              title="Help"
-              onPress={() => console.log("help")}
-            />
+            {subMenu.map((item) => (
+              <SubMenuItem
+                key={item.id}
+                iconURL={item.iconUrl}
+                title={item.title}
+                onPress={item.onPress}
+              />
+            ))}
           </ul>
           <div className={classes.userInfoContainer}>
             <User
