@@ -10,13 +10,13 @@ export const navigationMenu = [
 export const subMenu = [
   {
     id: 0,
-    iconUrl: settingsIcon,
+    iconURL: settingsIcon,
     title: "Settings",
     onPress: () => console.log("Settings"),
   },
   {
     id: 1,
-    iconUrl: helpIcon,
+    iconURL: helpIcon,
     title: "help",
     onPress: () => console.log("Help"),
   },

@@ -1,5 +1,5 @@
-export type SubMenuItemPropTypes = {
+export interface SubMenuItemPropTypes {
   iconURL?: string;
   title: string;
   onPress: () => void;
-};
+}
