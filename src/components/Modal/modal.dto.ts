@@ -1,4 +1,4 @@
-export const BORDER_TYPE = {
+export const MODAL_TYPE = {
   SUCCESS: "success",
   WARNING: "warning",
   ERROR: "error",

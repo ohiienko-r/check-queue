@@ -1,9 +1,11 @@
-import { BORDER_TYPE } from "./modal.dto";
+import { MODAL_TYPE } from "./modal.dto";
+
+export type ModalType = (typeof MODAL_TYPE)[keyof typeof MODAL_TYPE];
 
 export type ModalPropTypes = {
-  modalType?: (typeof BORDER_TYPE)[keyof typeof BORDER_TYPE];
+  visible: boolean;
   title: string;
   text: string;
-  onSubmit: () => void;
+  modalType?: ModalType;
   onClose: () => void;
 };

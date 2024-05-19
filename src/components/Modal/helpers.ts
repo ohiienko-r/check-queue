@@ -1,15 +1,14 @@
-import { BORDER_TYPE } from "./modal.dto";
+import { MODAL_TYPE } from "./modal.dto";
+import { ModalType } from "./types";
 import classes from "./Modal.module.scss";
 
-export const getBorderColor = (
-  borderType: (typeof BORDER_TYPE)[keyof typeof BORDER_TYPE]
-) => {
+export const getBorderColor = (borderType: ModalType) => {
   switch (borderType) {
-    case BORDER_TYPE.SUCCESS:
+    case MODAL_TYPE.SUCCESS:
       return classes.successBorder;
-    case BORDER_TYPE.WARNING:
+    case MODAL_TYPE.WARNING:
       return classes.warningBorder;
-    case BORDER_TYPE.ERROR:
+    case MODAL_TYPE.ERROR:
       return classes.errorBorder;
     default:
       return classes.defaultBorder;

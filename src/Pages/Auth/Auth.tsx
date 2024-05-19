@@ -37,15 +37,13 @@ const Auth: FC = () => {
 
   return (
     <div className={classes.container}>
-      {modalVisible && (
-        <Modal
-          modalType="error"
-          title="Error!"
-          text="An error has occured! Please check the validity of auth data."
-          onSubmit={() => setModalVisible(!modalVisible)}
-          onClose={() => setModalVisible(!modalVisible)}
-        />
-      )}
+      <Modal
+        visible={modalVisible}
+        modalType="error"
+        title="Error!"
+        text="An error has occured! Please check the validity of auth data. Looking forward for future updates"
+        onClose={() => setModalVisible(!modalVisible)}
+      />
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="email">Email:</label>
