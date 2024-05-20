@@ -31,6 +31,10 @@ const Sidebar: FC = () => {
     navigate(ROUTES_NAMES.ROOT);
   };
 
+  const handleHelp = () => {
+    window.location.href = "mailto:ohiienko.r@gmail.com";
+  };
+
   return (
     <aside className={classes.sidebar}>
       <h2 className={classes.logo}>Check Queue</h2>
@@ -53,7 +57,7 @@ const Sidebar: FC = () => {
               title="Settings"
               onPress={handleSettingsVisibility}
             />
-            <SubMenuItem iconURL={helpIcon} title="Help" onPress={() => {}} />
+            <SubMenuItem iconURL={helpIcon} title="Help" onPress={handleHelp} />
           </SubMenu>
           <div className={classes.userInfoContainer}>
             <User
