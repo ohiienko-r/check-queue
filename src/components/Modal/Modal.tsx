@@ -1,32 +1,35 @@
 import { FC } from "react";
-import Button from "../Button/Button";
+import ModalButton from "../ModalButton/ModalButton";
 import { ModalPropTypes } from "./types";
-import { getBorderColor } from "./helpers";
+import closeButton from "@/assets/images/close-button.svg";
 import classes from "./Modal.module.scss";
 
 const Modal: FC<ModalPropTypes> = ({
-  modalType,
+  visible,
   title,
   text,
-  onSubmit,
   onClose,
+  onSubmit,
 }) => {
   return (
-    <div className={classes.modalWrapper}>
-      <div
-        className={[classes.modal, modalType && getBorderColor(modalType)].join(
-          " "
-        )}
-      >
-        <h2>{title}</h2>
-        <p>{text}</p>
-
-        <div className={classes.buttonsContainer}>
-          <Button style="dismiss" innerText="Close" onPress={onClose} />
-          <Button innerText="Ok" onPress={onSubmit} />
+    visible && (
+      <div className={classes.modalWrapper}>
+        <div className={classes.modal}>
+          <img
+            src={closeButton}
+            alt="Close button"
+            className={classes.closeButton}
+            onClick={onClose}
+          />
+          <h2>{title}</h2>
+          <p>{text}</p>
+          <div className={classes.buttonsContainer}>
+            {onClose && <ModalButton type="decline" onPress={onClose} />}
+            {onSubmit && <ModalButton type="submit" onPress={onSubmit} />}
+          </div>
         </div>
       </div>
-    </div>
+    )
   );
 };
 

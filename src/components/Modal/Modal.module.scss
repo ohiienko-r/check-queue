@@ -4,34 +4,25 @@
 }
 
 .modal {
-  @apply max-w-[700px] max-h-[350px] w-full h-full flex flex-col justify-between items-center bg-[#060404] rounded-lg border border-solid border-[#414141] p-[2em];
+  @apply relative max-w-[30%] flex flex-col gap-5 justify-between items-center bg-[#060404] rounded-lg border border-solid border-[#414141] p-[2em];
   h2 {
-    @apply font-medium text-2xl text-center;
+    @apply font-medium text-xl text-center;
   }
   p {
-    @apply text-center text-lg;
+    @apply text-center;
   }
   animation: smoothAppear 0.3s;
 }
 
+.closeButton {
+  @apply p-1 absolute top-4 right-4 cursor-pointer transition-all rounded-full;
+  &:hover {
+    @apply bg-[#41414148];
+  }
+}
+
 .buttonsContainer {
-  @apply w-full flex justify-end gap-[1em];
-}
-
-.successBorder {
-  @apply border-green-600;
-}
-
-.warningBorder {
-  @apply border-orange-600;
-}
-
-.errorBorder {
-  @apply border-red-600;
-}
-
-.defaultBorder {
-  @apply border-[#414141];
+  @apply flex self-end gap-4;
 }
 
 @keyframes smoothAppear {
