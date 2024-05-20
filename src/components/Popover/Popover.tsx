@@ -9,15 +9,13 @@ const Popover: FC<PopoverPropTypes> = ({ visible, onClose, children }) => {
     e.preventDefault();
 
     if (ref.current && !ref.current.contains(e.target as Node)) {
-      console.log("click outside");
       onClose();
     }
   };
 
   useEffect(() => {
-    if (visible) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
+    visible && document.addEventListener("mousedown", handleClickOutside);
+
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };

@@ -8,6 +8,7 @@ import {
   SubMenuItem,
   User,
   Popover,
+  PopoverItem,
 } from "@/components";
 import { navigationMenu } from "./helpers";
 import { ROUTES_NAMES } from "@/Router/routes-names";
@@ -41,9 +42,11 @@ const Sidebar: FC = () => {
               visible={settingsVisible}
               onClose={handleSettingsVisibility}
             >
-              <li onClick={handleLogOut} style={{ cursor: "pointer" }}>
-                Sign out
-              </li>
+              <PopoverItem
+                style="decline"
+                text="Sign out"
+                onPress={handleLogOut}
+              />
             </Popover>
             <SubMenuItem
               iconURL={settingsIcon}
