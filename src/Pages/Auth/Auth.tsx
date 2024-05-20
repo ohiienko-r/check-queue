@@ -7,6 +7,10 @@ import classes from "./Auth.module.scss";
 const Auth: FC = () => {
   const [modalVisible, setModalVisible] = useState<boolean>(false);
 
+  const handleModalVisibility = () => {
+    setModalVisible(!modalVisible);
+  };
+
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
@@ -24,11 +28,11 @@ const Auth: FC = () => {
           password: formData.get("password") as string,
         });
       } catch (error) {
-        setModalVisible(!modalVisible);
+        handleModalVisibility();
         throw new Error(`AN ERROR OCCURED: ${error}`);
       }
     } else {
-      setModalVisible(!modalVisible);
+      handleModalVisibility();
       throw new Error(
         "AN ERROR OCCURED: please provide correct email and password"
       );
@@ -39,10 +43,9 @@ const Auth: FC = () => {
     <div className={classes.container}>
       <Modal
         visible={modalVisible}
-        modalType="error"
         title="Error!"
         text="An error has occured! Please check the validity of auth data. Looking forward for future updates"
-        onClose={() => setModalVisible(!modalVisible)}
+        onClose={handleModalVisibility}
       />
       <form onSubmit={handleSubmit}>
         <div>

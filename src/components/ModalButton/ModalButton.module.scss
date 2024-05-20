@@ -1,0 +1,17 @@
+.modalButton {
+  @apply p-2 text-sm rounded-lg transition-all;
+}
+
+.submit {
+  @apply bg-blue-600;
+  &:hover {
+    @apply ring-1 ring-[#F0EFEF];
+  }
+}
+
+.decline {
+  @apply text-[#CA1354] px-4;
+  &:hover {
+    @apply bg-[#ca135317];
+  }
+}

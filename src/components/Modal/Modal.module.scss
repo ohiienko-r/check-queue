@@ -15,29 +15,14 @@
 }
 
 .closeButton {
-  @apply absolute top-4 right-4 cursor-pointer;
+  @apply p-1 absolute top-4 right-4 cursor-pointer transition-all rounded-full;
   &:hover {
-    path {
-      @apply transition-all;
-      stroke: #ac403e;
-    }
+    @apply bg-[#41414148];
   }
 }
 
-.successBorder {
-  @apply border-green-600;
-}
-
-.warningBorder {
-  @apply border-orange-600;
-}
-
-.errorBorder {
-  @apply border-red-600;
-}
-
-.defaultBorder {
-  @apply border-[#414141];
+.buttonsContainer {
+  @apply flex self-end gap-4;
 }
 
 @keyframes smoothAppear {
