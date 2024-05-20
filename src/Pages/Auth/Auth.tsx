@@ -39,12 +39,16 @@ const Auth: FC = () => {
     }
   };
 
+  const modalHeader = "Error!";
+  const modalText =
+    "An error has occured! Please check the validity of auth data.";
+
   return (
     <div className={classes.container}>
       <Modal
         visible={modalVisible}
-        title="Error!"
-        text="An error has occured! Please check the validity of auth data. Looking forward for future updates"
+        title={modalHeader}
+        text={modalText}
         onClose={handleModalVisibility}
       />
       <form onSubmit={handleSubmit}>
