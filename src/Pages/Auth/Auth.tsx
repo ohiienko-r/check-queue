@@ -39,7 +39,7 @@ const Auth: FC = () => {
     }
   };
 
-  const modalHeader = "Error!";
+  const modalTitle = "Error!";
   const modalText =
     "An error has occured! Please check the validity of auth data.";
 
@@ -47,7 +47,7 @@ const Auth: FC = () => {
     <div className={classes.container}>
       <Modal
         visible={modalVisible}
-        title={modalHeader}
+        title={modalTitle}
         text={modalText}
         onClose={handleModalVisibility}
       />
