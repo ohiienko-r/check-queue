@@ -1,0 +1,17 @@
+.popoverItem {
+  @apply w-full p-2 text-center text-sm cursor-pointer rounded-lg transition-all;
+}
+
+.default {
+  @apply text-[#F0EFEF];
+  &:hover {
+    @apply bg-[#41414148];
+  }
+}
+
+.decline {
+  @apply text-[#CA1354] px-4;
+  &:hover {
+    @apply bg-[#ca135317];
+  }
+}
