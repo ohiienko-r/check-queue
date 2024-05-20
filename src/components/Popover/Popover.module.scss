@@ -1,0 +1,13 @@
+.popover {
+  @apply absolute -top-5 max-w-[200px] w-full px-8 py-2 flex flex-col items-center bg-[#060404] z-10 rounded-lg border border-solid border-[#414141];
+  animation: smoothAppear 0.3s;
+}
+
+@keyframes smoothAppear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
