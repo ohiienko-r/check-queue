@@ -4,8 +4,8 @@ import { db } from "@/Firebase";
 import { CollectionName } from "@/Firebase/Firestore/types";
 import { CheckItem } from "@/types";
 
-const usePcbQueue = (collectionName: CollectionName) => {
-  const [pcbQueue, setPcbQueue] = useState<CheckItem[]>();
+const useQueue = (collectionName: CollectionName) => {
+  const [queue, setQueue] = useState<CheckItem[]>();
 
   useEffect(() => {
     const unsubscribe = onSnapshot(
@@ -15,13 +15,13 @@ const usePcbQueue = (collectionName: CollectionName) => {
         querySnapshot.forEach((pcb) => {
           pcbData.push(pcb.data() as CheckItem);
         });
-        setPcbQueue(pcbData);
+        setQueue(pcbData);
       }
     );
     return unsubscribe;
   }, []);
 
-  return pcbQueue;
+  return queue;
 };
 
-export default usePcbQueue;
+export default useQueue;

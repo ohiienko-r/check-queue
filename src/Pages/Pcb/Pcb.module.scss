@@ -1,0 +1,4 @@
+.pageContainer {
+  @apply relative w-full h-full overflow-y-auto p-8 grid gap-4;
+  scrollbar-width: thin;
+}

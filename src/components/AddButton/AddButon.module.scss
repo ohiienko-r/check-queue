@@ -1,0 +1,6 @@
+.addButton {
+  @apply absolute bottom-12 right-12 p-4 bg-[#280909] rounded-full transition-all;
+  &:hover {
+    @apply shadow-custom;
+  }
+}

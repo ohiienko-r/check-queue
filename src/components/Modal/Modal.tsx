@@ -8,6 +8,7 @@ const Modal: FC<ModalPropTypes> = ({
   visible,
   title,
   text,
+  children,
   onClose,
   onSubmit,
 }) => {
@@ -15,14 +16,12 @@ const Modal: FC<ModalPropTypes> = ({
     visible && (
       <div className={classes.modalWrapper}>
         <div className={classes.modal}>
-          <img
-            src={closeButton}
-            alt="Close button"
-            className={classes.closeButton}
-            onClick={onClose}
-          />
-          <h2>{title}</h2>
-          <p>{text}</p>
+          <button onClick={onClose} className={classes.closeButton}>
+            <img src={closeButton} alt="Close button" />
+          </button>
+          {title && <h2>{title}</h2>}
+          {text && <p>{text}</p>}
+          {children}
           <div className={classes.buttonsContainer}>
             {onClose && <ModalButton type="decline" onPress={onClose} />}
             {onSubmit && <ModalButton type="submit" onPress={onSubmit} />}
