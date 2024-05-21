@@ -1,5 +1,10 @@
+import { usePcbQueue } from "@/Hooks";
+
 const PcbPage = () => {
-  return <h2>PCB</h2>;
+  const queue = usePcbQueue();
+  console.log(queue);
+
+  return <h2>PCB queue</h2>;
 };
 
 export default PcbPage;
