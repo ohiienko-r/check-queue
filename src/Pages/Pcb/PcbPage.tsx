@@ -1,7 +1,7 @@
-import { usePcbQueue } from "@/Hooks";
+import { useQueue } from "@/Hooks";
 
 const PcbPage = () => {
-  const queue = usePcbQueue();
+  const queue = useQueue("pcb");
   console.log(queue);
 
   return <h2>PCB queue</h2>;

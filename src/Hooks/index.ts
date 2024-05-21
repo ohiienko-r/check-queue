@@ -1,1 +1,1 @@
-export { default as usePcbQueue } from "./usePcbQueue/usePcbQueue";
+export { default as useQueue } from "./useQueue/useQueue";
