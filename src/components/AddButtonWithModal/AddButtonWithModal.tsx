@@ -1,12 +1,12 @@
 import { FC, useState } from "react";
-import { useQueue } from "@/Hooks";
+import { Modal, NewItemForm } from "@/components";
 import { addNewItemToCheck } from "@/Firebase";
-import { AddButton, Modal, NewItemForm } from "@/components";
-import classes from "./Pcb.module.scss";
+import { AddButtonWithModalPropTypes } from "./types";
+import { ITEM_STATUS } from "@/types";
+import plus from "@/assets/images/add-plus.svg";
+import classes from "./AddButonWithModal.module.scss";
 
-const Pcb: FC = () => {
-  const queue = useQueue("pcb");
-  console.log(queue);
+const AddButton: FC<AddButtonWithModalPropTypes> = ({ collectionName }) => {
   const [formVisible, setFormVisible] = useState<boolean>(false);
 
   const handleFormVisibility = () => {
@@ -15,16 +15,16 @@ const Pcb: FC = () => {
 
   const handleCreateNewItem = async (customer: string, link: string) => {
     await addNewItemToCheck({
-      collectionName: "pcb",
+      collectionName: collectionName,
       customer: customer,
       link: link,
-      status: "open",
+      status: ITEM_STATUS.OPEN,
     });
     handleFormVisibility();
   };
 
   return (
-    <section className={classes.pageContainer}>
+    <>
       <Modal
         visible={formVisible}
         onClose={handleFormVisibility}
@@ -32,9 +32,11 @@ const Pcb: FC = () => {
       >
         <NewItemForm onSubmit={handleCreateNewItem} />
       </Modal>
-      <AddButton onPress={handleFormVisibility} />
-    </section>
+      <button onClick={handleFormVisibility} className={classes.addButton}>
+        <img src={plus} alt="Add button" />
+      </button>
+    </>
   );
 };
 
-export default Pcb;
+export default AddButton;
