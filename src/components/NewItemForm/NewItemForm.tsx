@@ -8,7 +8,8 @@ const NewItemForm: FC<NewItemFormPropTypes> = ({ onSubmit }) => {
     const formData = new FormData(e.currentTarget as HTMLFormElement);
     await onSubmit(
       formData.get("customer") as string,
-      formData.get("link") as string
+      formData.get("link") as string,
+      (formData.get("message") as string) ?? ""
     );
   };
   return (
@@ -20,6 +21,10 @@ const NewItemForm: FC<NewItemFormPropTypes> = ({ onSubmit }) => {
       <div>
         <label htmlFor="link">Link:</label>
         <input id="link" type="string" name="link" required />
+      </div>
+      <div>
+        <label htmlFor="link">Message:</label>
+        <input id="message" type="string" name="message" />
       </div>
       <button type="submit">Create</button>
     </form>
