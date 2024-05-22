@@ -1,4 +1,4 @@
-import { ROLE, ItemStatus } from "@/types";
+import { ROLE, ItemStatus, COLLECTION_NAME } from "@/types";
 
 export type Role = (typeof ROLE)[keyof typeof ROLE];
 
@@ -7,7 +7,8 @@ export type UserRoleData = {
   uid: string;
 };
 
-export type CollectionName = "pcb" | "rfq";
+export type CollectionName =
+  (typeof COLLECTION_NAME)[keyof typeof COLLECTION_NAME];
 
 export type NewItemPropTypes = {
   collectionName: CollectionName;

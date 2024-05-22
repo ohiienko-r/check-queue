@@ -8,3 +8,5 @@ export { default as Popover } from "./Popover/Popover";
 export { default as PopoverItem } from "./PopoverItem/PopoverItem";
 export { default as NavigationMenu } from "./NavigationMenu/NavigationMenu";
 export { default as NavigationLink } from "./NavigationLink/NavigationLink";
+export { default as AddButtonWithModal } from "./AddButtonWithModal/AddButtonWithModal";
+export { default as NewItemForm } from "./NewItemForm/NewItemForm";

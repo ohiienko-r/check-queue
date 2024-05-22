@@ -5,3 +5,8 @@ export const ITEM_STATUS = {
   CHECKING: "checking",
   COPLETE: "complete",
 };
+
+export const COLLECTION_NAME = {
+  RFQ: "rfq",
+  PCB: "pcb",
+} as const;

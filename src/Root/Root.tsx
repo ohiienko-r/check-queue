@@ -1,7 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Sidebar from "./Sidebar/Sidebar";
 import classes from "./Root.module.scss";
-
 const Root = () => {
   return (
     <>
