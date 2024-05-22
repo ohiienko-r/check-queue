@@ -8,6 +8,7 @@ import {
   where,
   getDocs,
   DocumentReference,
+  serverTimestamp,
 } from "firebase/firestore";
 import { app } from "../main";
 import { extractId } from "./helpers";
@@ -74,6 +75,8 @@ export const addNewItemToCheck = async ({
   customer,
   link,
   status,
+  owner,
+  message,
 }: NewItemPropTypes): Promise<void> => {
   try {
     await addDoc(collection(db, collectionName), {
@@ -81,6 +84,9 @@ export const addNewItemToCheck = async ({
       id: extractId(link),
       link: link,
       status: status,
+      owner: owner,
+      message: message ?? null,
+      createdAt: serverTimestamp(),
     });
   } catch (error) {
     throw new Error(`AN ERROR OCCURED: ${error}`);

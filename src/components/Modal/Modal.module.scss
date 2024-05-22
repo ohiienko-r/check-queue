@@ -4,7 +4,7 @@
 }
 
 .modal {
-  @apply relative max-w-[30%] flex flex-col gap-5 justify-between items-center bg-[#060404] rounded-lg border border-solid border-[#414141] p-[2em];
+  @apply relative max-w-[30%] w-full flex flex-col gap-5 justify-between items-center bg-[#060404] rounded-lg border border-solid border-[#414141] p-[2em];
   h2 {
     @apply font-medium text-xl text-center;
   }

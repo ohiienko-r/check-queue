@@ -15,6 +15,8 @@ export type NewItemPropTypes = {
   customer: string;
   link: string;
   status: ItemStatus;
+  owner: string;
+  message?: string | null;
 };
 
 export type UpdateItemStatusPropTypes = {

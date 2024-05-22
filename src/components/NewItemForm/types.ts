@@ -1,3 +1,3 @@
 export type NewItemFormPropTypes = {
-  onSubmit: (customer: string, link: string) => Promise<void>;
+  onSubmit: (customer: string, link: string, message: string) => Promise<void>;
 };
