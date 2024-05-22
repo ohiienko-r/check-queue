@@ -10,3 +10,7 @@ export { default as NavigationMenu } from "./NavigationMenu/NavigationMenu";
 export { default as NavigationLink } from "./NavigationLink/NavigationLink";
 export { default as AddButtonWithModal } from "./AddButtonWithModal/AddButtonWithModal";
 export { default as NewItemForm } from "./NewItemForm/NewItemForm";
+export { default as QueueItem } from "./QueueItem/QueueItem";
+export { default as QueueItemHeader } from "./QueueItemHeader/QueueItemHeader";
+export { default as QueueItemBody } from "./QueueItemBody/QueueItemBody";
+export { default as QueueItemFooter } from "./QueueItemFooter/QueueItemFooter";

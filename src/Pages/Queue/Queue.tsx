@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { useQueue } from "@/Hooks";
-import { AddButtonWithModal } from "@/components";
+import { AddButtonWithModal, QueueItem } from "@/components";
 import { QueuePropTypes } from "./types";
 import classes from "./Queue.module.scss";
 
@@ -11,7 +11,15 @@ const Pcb: FC<QueuePropTypes> = ({ collectionName }) => {
   return (
     <section className={classes.pageContainer}>
       {queue.map((item) => (
-        <p key={item.id}>{item.customer}</p>
+        <QueueItem
+          key={item.id}
+          collectionName={collectionName}
+          id={item.id}
+          customer={item.customer}
+          link={item.link}
+          owner={item.owner}
+          status={item.status}
+        />
       ))}
       <AddButtonWithModal collectionName={collectionName} />
     </section>

@@ -1,0 +1,11 @@
+.item {
+  @apply max-w-[600px] w-full bg-[#060404] flex rounded-lg;
+}
+
+.contentContainer {
+  @apply w-full;
+}
+
+.statusIndicator {
+  @apply w-4 bg-[#CA1354] rounded-r-lg;
+}
