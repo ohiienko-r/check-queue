@@ -13,13 +13,11 @@ const useQueue = (collectionName: CollectionName) => {
     const unsubscribe = onSnapshot(
       collection(db, collectionName),
       (querySnapshot) => {
-        console.log("data start loading");
         const pcbData: CheckItem[] = [];
         querySnapshot.forEach((pcb) => {
           pcbData.push(pcb.data() as CheckItem);
         });
         setQueue(pcbData);
-        console.log("data loaded");
         setLoading(false);
       }
     );
