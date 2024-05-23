@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { QueueItemPropTypes } from "./types";
+import { getIndicatorColor } from "./helpers";
 import QueueItemHeader from "../QueueItemHeader/QueueItemHeader";
 import QueueItemBody from "../QueueItemBody/QueueItemBody";
 import QueueItemFooter from "../QueueItemFooter/QueueItemFooter";
@@ -23,6 +24,7 @@ const QueueItem: FC<QueueItemPropTypes> = ({
           customer={customer}
           link={link}
           owner={owner}
+          status={status}
         />
         {message && <QueueItemBody message={message} />}
         <QueueItemFooter
@@ -31,7 +33,11 @@ const QueueItem: FC<QueueItemPropTypes> = ({
           status={status}
         />
       </div>
-      <div className={classes.statusIndicator}></div>
+      <div
+        className={[classes.statusIndicator, getIndicatorColor(status)].join(
+          " "
+        )}
+      ></div>
     </div>
   );
 };

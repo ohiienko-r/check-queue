@@ -1,9 +1,10 @@
 import { FC } from "react";
 import { QueueItemBodyPropTypes } from "./types";
+import classes from "./QueueItemBody.module.scss";
 
 const QueueItemBody: FC<QueueItemBodyPropTypes> = ({ message }) => {
   return (
-    <div>
+    <div className={classes.itemBody}>
       <h2>Message:</h2>
       <p>{message}</p>
     </div>

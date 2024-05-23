@@ -6,8 +6,10 @@ import { CheckItem } from "@/types";
 
 const useQueue = (collectionName: CollectionName) => {
   const [queue, setQueue] = useState<CheckItem[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
+    setLoading(true);
     const unsubscribe = onSnapshot(
       collection(db, collectionName),
       (querySnapshot) => {
@@ -18,12 +20,13 @@ const useQueue = (collectionName: CollectionName) => {
         });
         setQueue(pcbData);
         console.log("data loaded");
+        setLoading(false);
       }
     );
     return unsubscribe;
   }, [collectionName]);
 
-  return queue;
+  return { queue, loading };
 };
 
 export default useQueue;

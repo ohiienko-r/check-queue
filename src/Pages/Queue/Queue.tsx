@@ -1,15 +1,17 @@
 import { FC } from "react";
 import { useQueue } from "@/Hooks";
 import { AddButtonWithModal, QueueItem } from "@/components";
+import Preloader from "@/components/Preloader/Preloader";
 import { QueuePropTypes } from "./types";
 import classes from "./Queue.module.scss";
 
 const Pcb: FC<QueuePropTypes> = ({ collectionName }) => {
-  const queue = useQueue(collectionName);
+  const { queue, loading } = useQueue(collectionName);
   console.log(queue);
 
   return (
     <section className={classes.pageContainer}>
+      <Preloader visible={loading} />
       {queue.map((item) => (
         <QueueItem
           key={item.id}
@@ -18,6 +20,7 @@ const Pcb: FC<QueuePropTypes> = ({ collectionName }) => {
           customer={item.customer}
           link={item.link}
           owner={item.owner}
+          message={item.message}
           status={item.status}
         />
       ))}

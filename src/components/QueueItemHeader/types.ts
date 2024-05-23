@@ -1,4 +1,5 @@
 import { CollectionName } from "@/Firebase/Firestore/types";
+import { ItemStatus } from "@/types";
 
 export type QueueItemHeaderPropTypes = {
   collectionName: CollectionName;
@@ -6,4 +7,5 @@ export type QueueItemHeaderPropTypes = {
   customer: string;
   link: string;
   owner: string;
+  status: ItemStatus;
 };
