@@ -10,22 +10,24 @@ const Pcb: FC<QueuePropTypes> = ({ collectionName }) => {
   console.log(queue);
 
   return (
-    <section className={classes.pageContainer}>
-      <Preloader visible={loading} />
-      {queue.map((item) => (
-        <QueueItem
-          key={item.id}
-          collectionName={collectionName}
-          id={item.id}
-          customer={item.customer}
-          link={item.link}
-          owner={item.owner}
-          message={item.message}
-          status={item.status}
-        />
-      ))}
+    <>
+      <section className={classes.pageContainer}>
+        <Preloader visible={loading} />
+        {queue.map((item) => (
+          <QueueItem
+            key={item.id}
+            collectionName={collectionName}
+            id={item.id}
+            customer={item.customer}
+            link={item.link}
+            owner={item.owner}
+            message={item.message}
+            status={item.status}
+          />
+        ))}
+      </section>
       <AddButtonWithModal collectionName={collectionName} />
-    </section>
+    </>
   );
 };
 

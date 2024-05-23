@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { QueueItemHeaderPropTypes } from "./types";
 import { getLinkFirstLetter } from "./helpers";
-import { getStatusTextColor } from "../QueueItem/helpers";
+import { getStatusTextColor } from "../../helpers";
 import dotsMenu from "@/assets/images/three-dots-menu.svg";
 import classes from "./QueueItemHeader.module.scss";
 

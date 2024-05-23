@@ -1,9 +1,11 @@
 import { FC } from "react";
 import { QueueItemPropTypes } from "./types";
 import { getIndicatorColor } from "./helpers";
-import QueueItemHeader from "../QueueItemHeader/QueueItemHeader";
-import QueueItemBody from "../QueueItemBody/QueueItemBody";
-import QueueItemFooter from "../QueueItemFooter/QueueItemFooter";
+import {
+  QueueItemHeader,
+  QueueItemBody,
+  QueueItemFooter,
+} from "./SubComponents";
 import classes from "./QueueItem.module.scss";
 
 const QueueItem: FC<QueueItemPropTypes> = ({

@@ -1,7 +1,6 @@
 import { FC } from "react";
 import { QueueItemFooterPropTypes } from "./types";
-import { ItemStatus } from "@/types";
-import { updateItemStatus } from "@/Firebase";
+import StatusButton from "../StatusButton/StatusButton";
 import classes from "./QueueItemFooter.module.scss";
 
 const QueueItemFooter: FC<QueueItemFooterPropTypes> = ({
@@ -9,17 +8,10 @@ const QueueItemFooter: FC<QueueItemFooterPropTypes> = ({
   id,
   status,
 }) => {
-  const handleStatusUpdate = async (updatedStatus: ItemStatus) => {
-    await updateItemStatus({
-      collectionName: collectionName,
-      id: id,
-      newStatus: updatedStatus,
-    });
-  };
   return (
     <div className={classes.itemFooter}>
       <h2>Status:</h2>
-      <button>{status}</button>
+      <StatusButton collectionName={collectionName} id={id} status={status} />
     </div>
   );
 };
