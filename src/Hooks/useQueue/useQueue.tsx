@@ -15,11 +15,14 @@ const useQueue = (collectionName: CollectionName) => {
 
     const unsubscribe = onSnapshot(
       query(collection(db, collectionName), orderBy("createdAt")),
+
       (querySnapshot) => {
         const pcbData: CheckItem[] = [];
+
         querySnapshot.forEach((pcb) => {
           pcbData.push(pcb.data() as CheckItem);
         });
+
         setQueue({ queue: pcbData, loading: false });
       }
     );

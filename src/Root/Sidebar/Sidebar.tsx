@@ -44,6 +44,7 @@ const Sidebar: FC = () => {
           <SubMenu>
             <Popover
               visible={settingsVisible}
+              position="top"
               onClose={handleSettingsVisibility}
             >
               <PopoverItem
