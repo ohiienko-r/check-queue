@@ -18,7 +18,7 @@
 }
 
 .settingsButton {
-  @apply rounded-full transition-all;
+  @apply px-1 rounded-full transition-all;
   &:hover {
     @apply bg-[#41414148];
   }

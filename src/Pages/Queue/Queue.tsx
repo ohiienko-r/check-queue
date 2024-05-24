@@ -7,7 +7,7 @@ import classes from "./Queue.module.scss";
 
 const Pcb: FC<QueuePropTypes> = ({ collectionName }) => {
   const { queue, loading } = useQueue(collectionName);
-
+  console.log(queue);
   return (
     <>
       <section className={classes.pageContainer}>
