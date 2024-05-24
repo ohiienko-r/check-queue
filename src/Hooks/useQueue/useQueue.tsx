@@ -12,6 +12,7 @@ const useQueue = (collectionName: CollectionName) => {
 
   useEffect(() => {
     setQueue({ queue: [], loading: true });
+
     const unsubscribe = onSnapshot(
       query(collection(db, collectionName), orderBy("createdAt")),
       (querySnapshot) => {
@@ -22,6 +23,7 @@ const useQueue = (collectionName: CollectionName) => {
         setQueue({ queue: pcbData, loading: false });
       }
     );
+
     return unsubscribe;
   }, [collectionName]);
 

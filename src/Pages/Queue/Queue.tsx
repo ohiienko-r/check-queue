@@ -7,7 +7,7 @@ import classes from "./Queue.module.scss";
 
 const Pcb: FC<QueuePropTypes> = ({ collectionName }) => {
   const { queue, loading } = useQueue(collectionName);
-  console.log(queue);
+
   return (
     <>
       <section className={classes.pageContainer}>
@@ -22,6 +22,7 @@ const Pcb: FC<QueuePropTypes> = ({ collectionName }) => {
             owner={item.owner}
             message={item.message}
             status={item.status}
+            createdAt={item.createdAt}
           />
         ))}
       </section>

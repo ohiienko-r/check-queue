@@ -16,6 +16,7 @@ const QueueItem: FC<QueueItemPropTypes> = ({
   owner,
   message,
   status,
+  createdAt,
 }) => {
   return (
     <div className={classes.item}>
@@ -33,6 +34,7 @@ const QueueItem: FC<QueueItemPropTypes> = ({
           collectionName={collectionName}
           id={id}
           status={status}
+          createdAt={createdAt}
         />
       </div>
       <div

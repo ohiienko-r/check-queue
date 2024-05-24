@@ -1,3 +1,11 @@
 .itemFooter {
-  @apply px-8 py-4 flex gap-2;
+  @apply px-8 py-4 flex justify-between;
+}
+
+.statusContainer {
+  @apply flex gap-2;
+}
+
+.timeContainer {
+  @apply text-sm font-thin;
 }
