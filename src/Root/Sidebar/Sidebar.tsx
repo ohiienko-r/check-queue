@@ -37,7 +37,7 @@ const Sidebar: FC = () => {
 
   return (
     <aside className={classes.sidebar}>
-      <h2 className={classes.logo}>Check Queue</h2>
+      <h2 className={classes.logo}>Queue</h2>
       {user && (
         <>
           <NavigationMenu config={navigationMenu} />
