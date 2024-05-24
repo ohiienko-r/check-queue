@@ -1,0 +1,24 @@
+.statusButton {
+  @apply px-1 border border-solid rounded-xl text-sm bg-transparent transition-all;
+}
+
+.open {
+  @apply border-[#CA1354] text-[rgb(202,19,84)];
+  &:hover {
+    @apply shadow-statusOpen;
+  }
+}
+
+.checking {
+  @apply border-[#f5a524] text-[#F5A524];
+  &:hover {
+    @apply shadow-statusChecking;
+  }
+}
+
+.complete {
+  @apply border-[rgb(23,201,100)] text-[#17C964];
+  &:hover {
+    @apply shadow-statusComplete;
+  }
+}

@@ -1,0 +1,9 @@
+.itemBody {
+  @apply px-8 py-4;
+  h2 {
+    @apply font-medium;
+  }
+  p {
+    @apply text-sm font-light;
+  }
+}

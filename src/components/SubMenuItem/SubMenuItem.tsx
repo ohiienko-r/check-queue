@@ -4,7 +4,7 @@ import classes from "./SubMenuItem.module.scss";
 
 const SubMenuItem: FC<SubMenuItemPropTypes> = ({ iconURL, title, onPress }) => {
   return (
-    <div onClick={onPress} className={classes.subItem}>
+    <li onClick={onPress} className={classes.subItem}>
       {iconURL && (
         <img
           src={iconURL}
@@ -13,7 +13,7 @@ const SubMenuItem: FC<SubMenuItemPropTypes> = ({ iconURL, title, onPress }) => {
         />
       )}
       <p>{title}</p>
-    </div>
+    </li>
   );
 };
 

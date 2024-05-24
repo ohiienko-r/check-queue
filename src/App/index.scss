@@ -23,3 +23,25 @@
   display: flex;
   font-family: "Poppins", system-ui, sans-serif;
 }
+
+.text-status__open {
+  color: #ca1354;
+}
+
+.text-status__checking {
+  color: #f5a524;
+}
+
+.text_status__complete {
+  color: #17c964;
+}
+
+.indicator-status__open {
+  background-color: #ca1354;
+}
+.indicator-status__checking {
+  background-color: #f5a524;
+}
+.indicator-status__complete {
+  background-color: #17c964;
+}

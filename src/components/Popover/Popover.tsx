@@ -1,8 +1,14 @@
 import { FC, useEffect, useRef } from "react";
 import { PopoverPropTypes } from "./types";
+import { getPositioningClass } from "./helpers";
 import classes from "./Popover.module.scss";
 
-const Popover: FC<PopoverPropTypes> = ({ visible, onClose, children }) => {
+const Popover: FC<PopoverPropTypes> = ({
+  visible,
+  position,
+  onClose,
+  children,
+}) => {
   const ref = useRef<HTMLUListElement>(null);
 
   const handleClickOutside = (e: MouseEvent) => {
@@ -23,7 +29,10 @@ const Popover: FC<PopoverPropTypes> = ({ visible, onClose, children }) => {
 
   return (
     visible && (
-      <ul className={classes.popover} ref={ref}>
+      <ul
+        className={[classes.popover, getPositioningClass(position)].join(" ")}
+        ref={ref}
+      >
         {children}
       </ul>
     )

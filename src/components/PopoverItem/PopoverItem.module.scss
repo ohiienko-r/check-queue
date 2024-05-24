@@ -1,5 +1,5 @@
 .popoverItem {
-  @apply w-full p-2 text-center text-sm cursor-pointer rounded-lg transition-all;
+  @apply max-w-[200px] w-full p-2 text-center text-sm cursor-pointer rounded-lg transition-all;
 }
 
 .default {

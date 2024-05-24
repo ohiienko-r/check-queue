@@ -1,29 +1,36 @@
 import { useState, useEffect } from "react";
-import { collection, onSnapshot } from "firebase/firestore";
+import { collection, onSnapshot, query, orderBy } from "firebase/firestore";
 import { db } from "@/Firebase";
 import { CollectionName } from "@/Firebase/Firestore/types";
 import { CheckItem } from "@/types";
 
 const useQueue = (collectionName: CollectionName) => {
-  const [queue, setQueue] = useState<CheckItem[]>([]);
+  const [queue, setQueue] = useState<{ queue: CheckItem[]; loading: boolean }>({
+    queue: [],
+    loading: true,
+  });
 
   useEffect(() => {
+    setQueue({ queue: [], loading: true });
+
     const unsubscribe = onSnapshot(
-      collection(db, collectionName),
+      query(collection(db, collectionName), orderBy("createdAt")),
+
       (querySnapshot) => {
-        console.log("data start loading");
         const pcbData: CheckItem[] = [];
+
         querySnapshot.forEach((pcb) => {
           pcbData.push(pcb.data() as CheckItem);
         });
-        setQueue(pcbData);
-        console.log("data loaded");
+
+        setQueue({ queue: pcbData, loading: false });
       }
     );
+
     return unsubscribe;
   }, [collectionName]);
 
-  return queue;
+  return { queue: queue.queue, loading: queue.loading };
 };
 
 export default useQueue;

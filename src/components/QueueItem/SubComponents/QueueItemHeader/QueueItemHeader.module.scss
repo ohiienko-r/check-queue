@@ -1,0 +1,25 @@
+.itemHeader {
+  @apply px-8 py-4 flex justify-between items-center border-b border-solid border-[#414141];
+  h2 {
+    @apply font-medium;
+  }
+}
+
+.link {
+  @apply flex gap-2;
+}
+
+.owner {
+  @apply relative flex gap-8;
+}
+
+.ownerName {
+  @apply font-thin;
+}
+
+.settingsButton {
+  @apply px-1 rounded-full transition-all;
+  &:hover {
+    @apply bg-[#41414148];
+  }
+}
