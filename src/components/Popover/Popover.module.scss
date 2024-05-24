@@ -1,5 +1,5 @@
 .popover {
-  @apply absolute max-w-[200px] w-full p-2 flex flex-col gap-2 items-center bg-[#060404] z-10 rounded-lg border border-solid border-[#414141];
+  @apply absolute left-0 max-w-[200px] w-full p-2 flex flex-col gap-2 items-center bg-[#060404] z-10 rounded-lg border border-solid border-[#414141];
   transform: translateY(16px);
   animation: smoothAppear 0.3s;
 }

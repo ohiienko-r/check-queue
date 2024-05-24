@@ -14,7 +14,7 @@ export const getCreationTimeString = (createdAt: Timestamp) => {
     timeZone: "Etc/GMT-3",
     hour: "2-digit",
     minute: "2-digit",
-    hour12: false, // Use 24-hour time format
+    hour12: false,
   });
 
   return `${date} ${time}`;

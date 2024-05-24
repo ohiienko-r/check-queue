@@ -1,4 +1,6 @@
-import { FC } from "react";
+import { FC, useState } from "react";
+import { Popover, PopoverItem } from "@/components";
+import { deleteItem } from "@/Firebase";
 import { QueueItemHeaderPropTypes } from "./types";
 import { getLinkFirstLetter } from "./helpers";
 import { getStatusTextColor } from "../../helpers";
@@ -13,6 +15,15 @@ const QueueItemHeader: FC<QueueItemHeaderPropTypes> = ({
   owner,
   status,
 }) => {
+  const [popoverVisible, setPopoverVisible] = useState<boolean>(false);
+
+  const handlePopoverVisibility = () => {
+    setPopoverVisible(!popoverVisible);
+  };
+
+  const handleItemDelete = () => {
+    deleteItem({ collectionName: collectionName, id: id });
+  };
   return (
     <div className={classes.itemHeader}>
       <h2>{customer}</h2>
@@ -26,7 +37,21 @@ const QueueItemHeader: FC<QueueItemHeaderPropTypes> = ({
       </div>
       <div className={classes.owner}>
         <p className={classes.ownerName}>{owner}</p>
-        <button className={classes.settingsButton}>
+        <button
+          className={classes.settingsButton}
+          onClick={handlePopoverVisibility}
+        >
+          <Popover
+            visible={popoverVisible}
+            position="bottom"
+            onClose={handlePopoverVisibility}
+          >
+            <PopoverItem
+              text="Delete"
+              onPress={handleItemDelete}
+              style="decline"
+            />
+          </Popover>
           <img src={dotsMenu} alt="Three dots menu button" />
         </button>
       </div>
