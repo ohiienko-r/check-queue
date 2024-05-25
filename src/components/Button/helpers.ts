@@ -1,7 +1,7 @@
 import { BUTTON_STYLE } from "./button.dto";
 import classes from "./Button.module.scss";
 
-export const getStyles = (
+export const getTypeStyles = (
   style: (typeof BUTTON_STYLE)[keyof typeof BUTTON_STYLE]
 ) => {
   switch (style) {

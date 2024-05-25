@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { ButtonProps } from "./types";
-import { getStyles } from "./helpers";
+import { getTypeStyles } from "./helpers";
 import classes from "./Button.module.scss";
 
 const Button: FC<ButtonProps> = ({
@@ -13,7 +13,7 @@ const Button: FC<ButtonProps> = ({
     <button
       onClick={onPress}
       disabled={disabled}
-      className={[classes.button, getStyles(style)].join(" ")}
+      className={[classes.button, getTypeStyles(style)].join(" ")}
     >
       {innerText}
     </button>

@@ -16,6 +16,7 @@ export const StatusButton: FC<StatusButonPropTypes> = ({
       newStatus: getNextItemStatus(status) as string,
     });
   };
+
   return (
     <button
       onClick={handleStatusUpdate}

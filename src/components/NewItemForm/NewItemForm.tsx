@@ -5,13 +5,16 @@ import classes from "./NewItemForm.module.scss";
 const NewItemForm: FC<NewItemFormPropTypes> = ({ onSubmit }) => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+
     const formData = new FormData(e.currentTarget as HTMLFormElement);
+
     await onSubmit(
       formData.get("customer") as string,
       formData.get("link") as string,
       (formData.get("message") as string) ?? ""
     );
   };
+
   return (
     <form onSubmit={handleSubmit} className={classes.newItemForm}>
       <div>

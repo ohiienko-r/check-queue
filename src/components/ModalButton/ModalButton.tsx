@@ -1,10 +1,10 @@
 import { FC } from "react";
-import { getButtonStyleAndText } from "./helpers";
+import { getTypeStyleAndText } from "./helpers";
 import { ModalButtonPropTypes } from "./types";
 import classes from "./ModalButton.module.scss";
 
 const ModalButton: FC<ModalButtonPropTypes> = ({ type, onPress }) => {
-  const buttonProps = getButtonStyleAndText(type);
+  const buttonProps = getTypeStyleAndText(type);
   return (
     <button
       className={[classes.modalButton, buttonProps.class].join(" ")}
