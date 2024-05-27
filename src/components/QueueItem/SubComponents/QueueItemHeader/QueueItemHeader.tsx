@@ -41,19 +41,19 @@ const QueueItemHeader: FC<QueueItemHeaderPropTypes> = ({
           className={classes.settingsButton}
           onClick={handlePopoverVisibility}
         >
-          <Popover
-            visible={popoverVisible}
-            position="bottom"
-            onClose={handlePopoverVisibility}
-          >
-            <PopoverItem
-              text="Delete"
-              onPress={handleItemDelete}
-              style="decline"
-            />
-          </Popover>
           <img src={dotsMenu} alt="Three dots menu button" />
         </button>
+        <Popover
+          visible={popoverVisible}
+          position="bottom"
+          onClose={handlePopoverVisibility}
+        >
+          <PopoverItem
+            text="Delete"
+            onPress={handleItemDelete}
+            style="decline"
+          />
+        </Popover>
       </div>
     </div>
   );
