@@ -1,10 +1,6 @@
-import { CollectionName } from "@/Firebase/Firestore/types";
-import { ItemStatus } from "@/types";
-import { Timestamp } from "firebase/firestore";
+import { QueueItemPropTypes } from "../../types";
 
-export type QueueItemFooterPropTypes = {
-  collectionName: CollectionName;
-  id: number;
-  status: ItemStatus;
-  createdAt: Timestamp;
-};
+export type QueueItemFooterPropTypes = Omit<
+  QueueItemPropTypes,
+  "customer" | "link" | "message" | "owner"
+>;

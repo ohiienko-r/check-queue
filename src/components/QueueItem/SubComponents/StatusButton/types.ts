@@ -1,8 +1,6 @@
-import { CollectionName } from "@/Firebase/Firestore/types";
-import { ItemStatus } from "@/types";
+import { QueueItemPropTypes } from "../../types";
 
-export type StatusButonPropTypes = {
-  collectionName: CollectionName;
-  id: number;
-  status: ItemStatus;
-};
+export type StatusButonPropTypes = Omit<
+  QueueItemPropTypes,
+  "customer" | "link" | "message" | "owner" | "createdAt"
+>;

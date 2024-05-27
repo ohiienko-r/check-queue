@@ -1,14 +1,6 @@
 import { CollectionName } from "@/Firebase/Firestore/types";
-import { ItemStatus } from "@/types";
-import { Timestamp } from "firebase/firestore";
+import { CheckItem } from "@/types";
 
-export type QueueItemPropTypes = {
+export type QueueItemPropTypes = CheckItem & {
   collectionName: CollectionName;
-  id: number;
-  customer: string;
-  link: string;
-  owner: string;
-  message?: string;
-  status: ItemStatus;
-  createdAt: Timestamp;
 };
