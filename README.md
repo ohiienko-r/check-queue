@@ -1,5 +1,3 @@
-# Fineline USA inner use product boilerplate
+# Check-Queue - fast & simple check-items tracker.
 
-This repo is just a set of initialized tech stuff for quick start of development of a new product.
-
-Uses: Vite + React, Typescrip, React Router, Tailwind, PostCSS, Autoprefixer
+_**This app is build for internal use.**_ 
