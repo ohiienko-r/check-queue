@@ -38,7 +38,10 @@ const AddButton: FC<AddButtonWithModalPropTypes> = ({ collectionName }) => {
         onClose={handleFormVisibility}
         title={`New ${collectionName.toUpperCase()} item`}
       >
-        <NewItemForm onSubmit={handleCreateNewItem} />
+        <NewItemForm
+          collectionName={collectionName}
+          onSubmit={handleCreateNewItem}
+        />
       </Modal>
       <button onClick={handleFormVisibility} className={classes.addButton}>
         <img src={plus} alt="Add button" />

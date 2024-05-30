@@ -5,7 +5,7 @@ import Preloader from "@/components/Preloader/Preloader";
 import { QueuePropTypes } from "./types";
 import classes from "./Queue.module.scss";
 
-const Pcb: FC<QueuePropTypes> = ({ collectionName }) => {
+const Queue: FC<QueuePropTypes> = ({ collectionName }) => {
   const { queue, loading } = useQueue(collectionName);
   return (
     <>
@@ -30,4 +30,4 @@ const Pcb: FC<QueuePropTypes> = ({ collectionName }) => {
   );
 };
 
-export default Pcb;
+export default Queue;

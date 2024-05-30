@@ -1,18 +1,29 @@
-import { FC, FormEvent } from "react";
+import { FC, FormEvent, useState } from "react";
 import { NewItemFormPropTypes } from "./types";
+import { validateLink } from "./helpers";
 import classes from "./NewItemForm.module.scss";
 
-const NewItemForm: FC<NewItemFormPropTypes> = ({ onSubmit }) => {
+const NewItemForm: FC<NewItemFormPropTypes> = ({
+  collectionName,
+  onSubmit,
+}) => {
+  const [linkError, setLinkError] = useState<boolean>(false);
+
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
     const formData = new FormData(e.currentTarget as HTMLFormElement);
 
-    await onSubmit(
-      formData.get("customer") as string,
-      formData.get("link") as string,
-      (formData.get("message") as string) ?? ""
-    );
+    if (!validateLink(formData.get("link") as string, collectionName)) {
+      setLinkError(true);
+      throw new Error("Invalid link");
+    } else {
+      await onSubmit(
+        formData.get("customer") as string,
+        formData.get("link") as string,
+        (formData.get("message") as string) ?? ""
+      );
+    }
   };
 
   return (
@@ -24,6 +35,7 @@ const NewItemForm: FC<NewItemFormPropTypes> = ({ onSubmit }) => {
       <div>
         <label htmlFor="link">Link:</label>
         <input id="link" type="string" name="link" required />
+        {linkError && <p className={classes.linkError}>Invalid link!</p>}
       </div>
       <div>
         <label htmlFor="link">Message:</label>
