@@ -1,3 +1,7 @@
 .subMenu {
   @apply relative flex flex-col gap-4 p-8 mt-auto;
+
+  @media screen and (width < 1001px) {
+    @apply p-4 gap-2;
+  }
 }

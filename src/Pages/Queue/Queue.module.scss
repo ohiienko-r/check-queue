@@ -2,8 +2,11 @@
   @apply relative w-full h-full overflow-y-auto p-8 flex flex-col gap-4;
   scrollbar-width: thin;
 
-  @media screen and (width < 801px) {
+  @media screen and (width < 1001px) {
     @apply p-4;
+  }
+
+  @media screen and (width < 801px) {
     position: initial;
   }
 }
