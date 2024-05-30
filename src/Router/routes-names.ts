@@ -3,4 +3,5 @@ export enum ROUTES_NAMES {
   AUTH = "/auth",
   PCB = "/pcb",
   RFQ = "/rfq",
+  SETTINGS = "/settings",
 }
