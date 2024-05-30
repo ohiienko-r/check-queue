@@ -1,5 +1,5 @@
 .sidebar {
-  @apply bg-[#060404] flex flex-col  min-w-[350px];
+  @apply bg-[#060404] flex flex-col  max-w-[350px] w-full;
 }
 
 .logo {

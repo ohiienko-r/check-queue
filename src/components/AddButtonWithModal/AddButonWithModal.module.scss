@@ -3,4 +3,8 @@
   &:hover {
     @apply shadow-custom;
   }
+
+  @media screen and (width < 801px) {
+    @apply bottom-20 right-5;
+  }
 }

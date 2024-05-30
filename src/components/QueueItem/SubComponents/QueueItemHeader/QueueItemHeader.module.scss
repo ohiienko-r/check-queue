@@ -3,6 +3,10 @@
   h2 {
     @apply font-medium;
   }
+
+  @media screen and (width < 801px) {
+    @apply p-4 flex-col items-start;
+  }
 }
 
 .link {
@@ -11,6 +15,10 @@
 
 .owner {
   @apply relative flex gap-8;
+
+  @media screen and (width < 801px) {
+    @apply w-full justify-between;
+  }
 }
 
 .ownerName {
