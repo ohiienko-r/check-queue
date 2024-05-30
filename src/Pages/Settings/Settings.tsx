@@ -11,8 +11,12 @@ const Settings = () => {
     navigate(ROUTES_NAMES.ROOT);
   };
 
+  const handleHelp = () => {
+    window.location.href = "mailto:ohiienko.r@gmail.com";
+  };
+
   const settingsMenu = [
-    { id: 2, title: "Help", onPress: () => {} },
+    { id: 2, title: "Help", onPress: handleHelp },
     { id: 0, title: "Sign Out", onPress: handleLogOut },
   ];
 
