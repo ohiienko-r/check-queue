@@ -1,5 +1,8 @@
 .sidebar {
-  @apply bg-[#060404] flex flex-col  min-w-[350px];
+  @apply bg-[#060404] flex flex-col max-w-[350px] w-full;
+  @media screen and (width < 1001px) {
+    @apply max-w-[300px];
+  }
 }
 
 .logo {
@@ -8,4 +11,8 @@
 
 .userInfoContainer {
   @apply p-8 border-t border-solid border-[#414141];
+
+  @media screen and (width < 1001px) {
+    @apply p-4;
+  }
 }

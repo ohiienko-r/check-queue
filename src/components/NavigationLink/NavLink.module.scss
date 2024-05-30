@@ -3,6 +3,10 @@
   &:hover {
     @apply translate-x-2 bg-[#AC403E];
   }
+
+  @media screen and (width < 801px) {
+    @apply text-center;
+  }
 }
 
 .active {

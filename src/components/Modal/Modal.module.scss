@@ -12,6 +12,14 @@
     @apply text-center;
   }
   animation: smoothAppear 0.3s;
+
+  @media screen and (width < 1201px) and (width > 801px) {
+    @apply max-w-[50%];
+  }
+
+  @media screen and (width < 801px) {
+    @apply max-w-[80%];
+  }
 }
 
 .closeButton {

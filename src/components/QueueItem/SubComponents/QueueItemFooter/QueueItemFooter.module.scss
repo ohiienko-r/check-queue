@@ -1,5 +1,13 @@
 .itemFooter {
   @apply px-8 py-4 flex justify-between;
+
+  @media screen and (width < 1001px) {
+    @apply p-6;
+  }
+
+  @media screen and (width < 801px) {
+    @apply px-4 py-2;
+  }
 }
 
 .statusContainer {

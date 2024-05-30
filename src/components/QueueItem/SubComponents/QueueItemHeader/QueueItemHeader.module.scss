@@ -3,14 +3,30 @@
   h2 {
     @apply font-medium;
   }
+
+  @media screen and (width < 1001px) {
+    @apply p-6;
+  }
+
+  @media screen and (width < 801px) {
+    @apply p-4 flex-col items-start;
+  }
 }
 
 .link {
-  @apply flex gap-2;
+  @apply flex flex-wrap gap-2;
 }
 
 .owner {
   @apply relative flex gap-8;
+
+  @media screen and (width < 1001px) {
+    @apply gap-2;
+  }
+
+  @media screen and (width < 801px) {
+    @apply w-full justify-between;
+  }
 }
 
 .ownerName {

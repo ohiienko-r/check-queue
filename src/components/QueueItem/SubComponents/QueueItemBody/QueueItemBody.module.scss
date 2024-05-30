@@ -5,5 +5,15 @@
   }
   p {
     @apply text-sm font-light;
+    word-wrap: break-word;
+    word-break: break-word;
+  }
+
+  @media screen and (width < 801px) {
+    @apply px-4 py-2;
+
+    p {
+      @apply text-wrap;
+    }
   }
 }

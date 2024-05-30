@@ -5,6 +5,10 @@
   }
   form {
     @apply flex flex-col gap-4 w-3/5;
+
+    @media screen and (width < 801px) {
+      @apply w-10/12;
+    }
     div {
       @apply flex flex-col gap-2;
       input {
@@ -20,5 +24,13 @@
         @apply translate-y-0 bg-[#808080] shadow-none;
       }
     }
+  }
+
+  @media screen and (width < 1001px) and (width > 801px) {
+    @apply max-w-[90%];
+  }
+
+  @media screen and (width < 801px) {
+    @apply max-w-none w-full h-full;
   }
 }

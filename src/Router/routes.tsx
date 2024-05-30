@@ -1,4 +1,4 @@
-import { Auth, Queue } from "@/Pages";
+import { Auth, Queue, Settings } from "@/Pages";
 import { ROUTES_NAMES } from "./routes-names";
 import { User } from "firebase/auth";
 import { Navigate } from "react-router-dom";
@@ -17,6 +17,10 @@ export const getRoutes = (user: User | null) => {
       {
         path: ROUTES_NAMES.PCB,
         element: <Queue collectionName={COLLECTION_NAME.PCB} />,
+      },
+      {
+        path: ROUTES_NAMES.SETTINGS,
+        element: <Settings />,
       },
     ];
   }

@@ -22,6 +22,10 @@
   height: 100svh;
   display: flex;
   font-family: "Poppins", system-ui, sans-serif;
+
+  @media screen and (width < 801px) {
+    @apply flex-col justify-between;
+  }
 }
 
 .text-status__open {

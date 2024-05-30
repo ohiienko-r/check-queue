@@ -1,3 +1,7 @@
 .navMenu {
   @apply flex flex-col p-8 gap-4;
+
+  @media screen and (width < 1001px) {
+    @apply p-4 gap-2;
+  }
 }
