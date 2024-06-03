@@ -1,14 +1,11 @@
 .navLink {
   @apply w-full px-4 py-3 rounded-lg  transition-all font-medium;
   &:hover {
-    @apply translate-x-2 bg-[#AC403E];
+    @apply bg-[#AC403E];
   }
 
   @media screen and (width < 801px) {
     @apply text-center;
-    &:hover {
-      @apply translate-x-0;
-    }
   }
 }
 

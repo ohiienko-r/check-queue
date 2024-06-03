@@ -7,7 +7,7 @@
     @apply flex flex-col gap-4 w-3/5;
 
     @media screen and (width < 801px) {
-      @apply w-10/12;
+      @apply w-10/12 gap-10;
     }
     div {
       @apply flex flex-col gap-2;

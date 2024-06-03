@@ -11,3 +11,5 @@ export { default as NavigationLink } from "./NavigationLink/NavigationLink";
 export { default as AddButtonWithModal } from "./AddButtonWithModal/AddButtonWithModal";
 export { default as NewItemForm } from "./NewItemForm/NewItemForm";
 export { default as QueueItem } from "./QueueItem/QueueItem";
+export { default as SettingsMenu } from "./SettingsMenu/SettingsMenu";
+export { default as SettingsMenuItem } from "./SettingsMenuItem/SettingsMenuItem";

@@ -1,7 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { logOut } from "@/Firebase";
 import { ROUTES_NAMES } from "@/Router/routes-names";
-import { SubMenu, SubMenuItem } from "@/components";
+import { SettingsMenu, SettingsMenuItem } from "@/components";
+import classes from "./Settings.module.scss";
 
 const Settings = () => {
   const navigate = useNavigate();
@@ -16,21 +17,23 @@ const Settings = () => {
   };
 
   const settingsMenu = [
-    { id: 2, title: "Help", onPress: handleHelp },
-    { id: 0, title: "Sign Out", onPress: handleLogOut },
+    { id: 0, title: "New user", onPress: () => {} },
+    { id: 1, title: "Help", onPress: handleHelp, decline: false },
+    { id: 2, title: "Sign Out", onPress: handleLogOut, decline: true },
   ];
 
   return (
-    <section>
-      <SubMenu>
+    <section className={classes.settings}>
+      <SettingsMenu>
         {settingsMenu.map((item) => (
-          <SubMenuItem
+          <SettingsMenuItem
             key={item.id}
             title={item.title}
             onPress={item.onPress}
+            decline={item.decline}
           />
         ))}
-      </SubMenu>
+      </SettingsMenu>
     </section>
   );
 };
