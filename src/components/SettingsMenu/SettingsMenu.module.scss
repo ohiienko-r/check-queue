@@ -1,0 +1,7 @@
+.settingsMenu {
+  @apply w-full flex flex-col items-center gap-6 p-8;
+
+  @media screen and (width < 1001px) {
+    @apply p-4;
+  }
+}

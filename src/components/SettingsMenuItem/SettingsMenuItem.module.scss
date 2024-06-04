@@ -1,0 +1,14 @@
+.settingsItem {
+  @apply text-lg p-1 font-medium transition-all border-b border-solid;
+  &:active {
+    @apply text-[#AC403E];
+  }
+}
+
+.decline {
+  @apply text-[#AC403E];
+
+  &:active {
+    @apply text-white;
+  }
+}
